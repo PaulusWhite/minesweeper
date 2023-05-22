@@ -11,7 +11,7 @@ let switchSound = () => {
     setIsSoundOn(newSoundValue);
 
     let newIconImgTitle = newSoundValue ? "soundOn" : "soundOff";
-    soundIcon.setAttribute("src", `../assets/${newIconImgTitle}.svg`);
+    soundIcon.setAttribute("src", `./assets/${newIconImgTitle}.svg`);
   });
 };
 

@@ -100,10 +100,10 @@ let clickAction = (cell, cellsArr, layoutIndex, isCheckPlayWinFlag = true) => {
     let blowIcon = createElement("img", ["minefield__blastIcon"]);
 
     if (!isCheckPlayWinFlag) {
-      blowIcon.setAttribute("src", "../assets/foundBomb.svg");
+      blowIcon.setAttribute("src", "./assets/foundBomb.svg");
       cell.classList.add("minefield__cell_foundMine");
     } else {
-      blowIcon.setAttribute("src", "../assets/bombBlast.svg");
+      blowIcon.setAttribute("src", "./assets/bombBlast.svg");
       cell.classList.add("minefield__cell_blast");
     }
 
@@ -131,7 +131,7 @@ let setFlagAction = (cell) => {
 
   if (cell.classList.contains("minefield__cell_flagged")) {
     let flagIcon = createElement("img", ["minefield__flagIcon"]);
-    flagIcon.setAttribute("src", "../assets/flag.svg");
+    flagIcon.setAttribute("src", "./assets/flag.svg");
     cell.append(flagIcon);
   } else {
     let flagIcon = cell.firstElementChild;

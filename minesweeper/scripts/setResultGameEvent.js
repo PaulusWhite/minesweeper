@@ -14,11 +14,11 @@ let showMessage = (resultGameEventFlag) => {
 
   if (!resultGameEventFlag) {
     messageText.textContent = "Game Over! Try Again";
-    messageIcon.setAttribute("src", "../assets/skeleton.svg");
+    messageIcon.setAttribute("src", "./assets/skeleton.svg");
   } else {
     let [timeValue, clickCounterValue] = getScoreboardData();
     messageText.textContent = `Hooray! You found all mines in ${timeValue} seconds and ${clickCounterValue} clicks`;
-    messageIcon.setAttribute("src", "../assets/win.svg");
+    messageIcon.setAttribute("src", "./assets/win.svg");
     setSound("win");
   }
   messageSection.classList.add("messageSection_showSection");

@@ -10,13 +10,13 @@ let createTopScoreboardElements = (topScoreboardSection) => {
 
   let settingsBtn = createElement("button", ["scoreboard__settingsBtn"]);
   let settingsIcon = createElement("img", ["scoreboard__settingsIcon"]);
-  settingsIcon.setAttribute("src", "../assets/gear.svg");
+  settingsIcon.setAttribute("src", "./assets/gear.svg");
   settingsBtn.append(settingsIcon);
 
   let soundBtn = createElement("button", ["scoreboard__soundBtn"]);
   let soundIcon = createElement("img", ["scoreboard__soundIcon"]);
   let soundIconImgTitle = getIsSoundOn() === "true" ? "soundOn" : "soundOff";
-  soundIcon.setAttribute("src", `../assets/${soundIconImgTitle}.svg`);
+  soundIcon.setAttribute("src", `./assets/${soundIconImgTitle}.svg`);
   soundBtn.append(soundIcon);
 
   topScoreboardSection.append(levelIndicator, soundBtn, settingsBtn);
@@ -25,7 +25,7 @@ let createTopScoreboardElements = (topScoreboardSection) => {
 let createBottomScoreboardElements = (bottomScoreboardSection) => {
   let timeIndicator = createElement("span", ["scoreboard__time"]);
   let timeIcon = createElement("img", ["scoreboard__timeIcon"]);
-  timeIcon.setAttribute("src", "../assets/clock.svg");
+  timeIcon.setAttribute("src", "./assets/clock.svg");
   let timeValue = createElement("span", ["scoreboard__timeValue"]);
   timeValue.textContent = "00:00";
   timeIndicator.append(timeValue, timeIcon);
@@ -34,14 +34,14 @@ let createBottomScoreboardElements = (bottomScoreboardSection) => {
   let allMinesValue = createElement("span", ["scoreboard__allMinesValue"]);
   allMinesValue.textContent = getMinesQuantityValue();
   let allMinesIcon = createElement("img", ["scoreboard__allMinesIcon"]);
-  allMinesIcon.setAttribute("src", "../assets/bomb.svg");
+  allMinesIcon.setAttribute("src", "./assets/bomb.svg");
   allMines.append(allMinesValue, allMinesIcon);
 
   let clicksCounter = createElement("span", ["scoreboard__clickCounter"]);
   let clickCounterValue = createElement("span", ["scoreboard__clickCounterValue"]);
   clickCounterValue.textContent = "0";
   let clicksCounterIcon = createElement("img", ["scoreboard__clicksCounterIcon"]);
-  clicksCounterIcon.setAttribute("src", "../assets/click.svg");
+  clicksCounterIcon.setAttribute("src", "./assets/click.svg");
   clicksCounter.append(clickCounterValue, clicksCounterIcon);
 
   let newGameBtn = createElement("button", ["scoreboard__newGameBtn"]);

@@ -8,7 +8,7 @@ let setSound = (soundType) => {
   if (isSound === "false") return;
 
   let audio = new Audio();
-  audio.src = `../assets/sounds/${soundType}.mp3`;
+  audio.src = `./assets/sounds/${soundType}.mp3`;
 
   audio.play();
 };
