@@ -1,0 +1,383 @@
+body {
+  padding: 15px; }
+  @media (max-width: 768px) {
+    body {
+      padding: 5px; } }
+
+.settingsMenu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -420px;
+  width: 320px;
+  background-color: #e9dbb3;
+  box-shadow: inset 2px 2px 7px 3px #dfcda2;
+  transition: 0.2s; }
+  .settingsMenu .closeBtn {
+    padding: 5px;
+    border: solid #dfcda2 2px;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 7px 3px #dfcda2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border-radius: 100px;
+    outline: none;
+    background: unset;
+    cursor: pointer;
+    transition: 0.1s;
+    position: relative;
+    margin: 10px 0 0 10px; }
+    .settingsMenu .closeBtn:hover {
+      box-shadow: inset 2px 2px 5px 2px #dc6a3f;
+      border-color: #dc6a3f; }
+    .settingsMenu .closeBtn:active {
+      transform: scale(0.95); }
+    .settingsMenu .closeBtn .closeBtn__partition {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 70%;
+      height: 3px;
+      border-radius: 5px;
+      background-color: #546b6e; }
+      .settingsMenu .closeBtn .closeBtn__partition:first-child {
+        transform: translate(-50%, -50%) rotate(45deg); }
+      .settingsMenu .closeBtn .closeBtn__partition:last-child {
+        transform: translate(-50%, -50%) rotate(-45deg); }
+  .settingsMenu .settingsMenu__settingsHeading {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+    background-color: #dc6a3f;
+    color: #d6c488; }
+  .settingsMenu .settingsMenu__levelSettings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    box-sizing: border-box; }
+    .settingsMenu .settingsMenu__levelSettings .settingsMenu__lvlBtn {
+      padding: 5px;
+      border: solid #dfcda2 2px;
+      border-radius: 5px;
+      box-shadow: inset 2px 2px 7px 3px #dfcda2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 45px;
+      height: 45px;
+      padding: 0;
+      border-radius: 100px;
+      outline: none;
+      background: unset;
+      cursor: pointer;
+      transition: 0.1s;
+      width: 280px;
+      margin-top: 15px;
+      border-radius: 5px; }
+      .settingsMenu .settingsMenu__levelSettings .settingsMenu__lvlBtn:hover {
+        box-shadow: inset 2px 2px 5px 2px #dc6a3f;
+        border-color: #dc6a3f; }
+      .settingsMenu .settingsMenu__levelSettings .settingsMenu__lvlBtn:active {
+        transform: scale(0.95); }
+    .settingsMenu .settingsMenu__levelSettings .settingsMenu__lvlBtn_active {
+      box-shadow: inset 2px 2px 7px 3px #dc6a3f;
+      border-color: #dc6a3f; }
+    .settingsMenu .settingsMenu__levelSettings .settingsMenu__minesQuantity {
+      display: flex;
+      padding: 0 10px;
+      margin-top: 15px;
+      box-sizing: border-box;
+      font-size: 18px; }
+      .settingsMenu .settingsMenu__levelSettings .settingsMenu__minesQuantity .settingsMenu__minesQuantityInput {
+        width: 50px;
+        margin-left: 15px;
+        outline: unset; }
+    .settingsMenu .settingsMenu__levelSettings .settingsMenu__saveSettingsBtn {
+      padding: 5px;
+      border: solid #dfcda2 2px;
+      border-radius: 5px;
+      box-shadow: inset 2px 2px 7px 3px #dfcda2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 45px;
+      height: 45px;
+      padding: 0;
+      border-radius: 100px;
+      outline: none;
+      background: unset;
+      cursor: pointer;
+      transition: 0.1s;
+      margin-top: 15px;
+      width: 180px;
+      border-radius: 5px; }
+      .settingsMenu .settingsMenu__levelSettings .settingsMenu__saveSettingsBtn:hover {
+        box-shadow: inset 2px 2px 5px 2px #dc6a3f;
+        border-color: #dc6a3f; }
+      .settingsMenu .settingsMenu__levelSettings .settingsMenu__saveSettingsBtn:active {
+        transform: scale(0.95); }
+
+.settingsMenu_showMenu {
+  right: 0; }
+
+.mainField {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-color: #e9dbb3; }
+  .mainField .scoreboard {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #546b6e; }
+    .mainField .scoreboard .scoreboard__topSection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .mainField .scoreboard .scoreboard__topSection .scoreboard__lvlIndicator {
+        font-size: 24px; }
+      .mainField .scoreboard .scoreboard__topSection .scoreboard__soundBtn {
+        padding: 5px;
+        border: solid #dfcda2 2px;
+        border-radius: 5px;
+        box-shadow: inset 2px 2px 7px 3px #dfcda2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        border-radius: 100px;
+        outline: none;
+        background: unset;
+        cursor: pointer;
+        transition: 0.1s;
+        margin-left: auto;
+        margin-right: 25px; }
+        .mainField .scoreboard .scoreboard__topSection .scoreboard__soundBtn:hover {
+          box-shadow: inset 2px 2px 5px 2px #dc6a3f;
+          border-color: #dc6a3f; }
+        .mainField .scoreboard .scoreboard__topSection .scoreboard__soundBtn:active {
+          transform: scale(0.95); }
+        .mainField .scoreboard .scoreboard__topSection .scoreboard__soundBtn .scoreboard__soundIcon {
+          width: 30px; }
+      .mainField .scoreboard .scoreboard__topSection .scoreboard__settingsBtn {
+        padding: 5px;
+        border: solid #dfcda2 2px;
+        border-radius: 5px;
+        box-shadow: inset 2px 2px 7px 3px #dfcda2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        border-radius: 100px;
+        outline: none;
+        background: unset;
+        cursor: pointer;
+        transition: 0.1s; }
+        .mainField .scoreboard .scoreboard__topSection .scoreboard__settingsBtn:hover {
+          box-shadow: inset 2px 2px 5px 2px #dc6a3f;
+          border-color: #dc6a3f; }
+        .mainField .scoreboard .scoreboard__topSection .scoreboard__settingsBtn:active {
+          transform: scale(0.95); }
+        .mainField .scoreboard .scoreboard__topSection .scoreboard__settingsBtn .scoreboard__settingsIcon {
+          width: 30px; }
+    .mainField .scoreboard .scoreboard__bottomSection {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px; }
+      .mainField .scoreboard .scoreboard__bottomSection .scoreboard__time,
+      .mainField .scoreboard .scoreboard__bottomSection .scoreboard__allMines,
+      .mainField .scoreboard .scoreboard__bottomSection .scoreboard__clickCounter {
+        padding: 5px;
+        border: solid #dfcda2 2px;
+        border-radius: 5px;
+        box-shadow: inset 2px 2px 7px 3px #dfcda2;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: start;
+        align-items: center;
+        max-width: 130px;
+        font-size: 20px; }
+        .mainField .scoreboard .scoreboard__bottomSection .scoreboard__time .scoreboard__timeIcon,
+        .mainField .scoreboard .scoreboard__bottomSection .scoreboard__time .scoreboard__allMinesIcon,
+        .mainField .scoreboard .scoreboard__bottomSection .scoreboard__time .scoreboard__clicksCounterIcon,
+        .mainField .scoreboard .scoreboard__bottomSection .scoreboard__allMines .scoreboard__timeIcon,
+        .mainField .scoreboard .scoreboard__bottomSection .scoreboard__allMines .scoreboard__allMinesIcon,
+        .mainField .scoreboard .scoreboard__bottomSection .scoreboard__allMines .scoreboard__clicksCounterIcon,
+        .mainField .scoreboard .scoreboard__bottomSection .scoreboard__clickCounter .scoreboard__timeIcon,
+        .mainField .scoreboard .scoreboard__bottomSection .scoreboard__clickCounter .scoreboard__allMinesIcon,
+        .mainField .scoreboard .scoreboard__bottomSection .scoreboard__clickCounter .scoreboard__clicksCounterIcon {
+          width: 30px;
+          margin-right: 15px; }
+      .mainField .scoreboard .scoreboard__bottomSection .scoreboard__newGameBtn {
+        padding: 5px;
+        border: solid #dfcda2 2px;
+        border-radius: 5px;
+        box-shadow: inset 2px 2px 7px 3px #dfcda2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        border-radius: 100px;
+        outline: none;
+        background: unset;
+        cursor: pointer;
+        transition: 0.1s;
+        width: 120px;
+        border-radius: 5px;
+        color: #546b6e; }
+        .mainField .scoreboard .scoreboard__bottomSection .scoreboard__newGameBtn:hover {
+          box-shadow: inset 2px 2px 5px 2px #dc6a3f;
+          border-color: #dc6a3f; }
+        .mainField .scoreboard .scoreboard__bottomSection .scoreboard__newGameBtn:active {
+          transform: scale(0.95); }
+    .mainField .scoreboard .messageSection {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row-reverse;
+      height: 45px;
+      margin: 10px 0;
+      padding: 5px;
+      border: solid #d6c488 2px;
+      border-radius: 15px;
+      box-sizing: border-box;
+      background-color: #e9dbb3;
+      opacity: 0;
+      transition: 0.1s; }
+      .mainField .scoreboard .messageSection .messageSection__messageText {
+        margin: 0;
+        font-size: 17px; }
+        @media (max-width: 533px) {
+          .mainField .scoreboard .messageSection .messageSection__messageText {
+            font-size: 16px; } }
+      .mainField .scoreboard .messageSection .messageSection__messageIcon {
+        width: 30px;
+        margin-right: 15px; }
+    .mainField .scoreboard .messageSection_showSection {
+      opacity: 1; }
+  .mainField .minefield {
+    display: grid;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: calc(100vh - 100px - 150px);
+    box-sizing: border-box; }
+    .mainField .minefield .minefield__cell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      box-shadow: 3px 3px 4px 1px #e27749;
+      box-sizing: border-box;
+      font-size: 22px; }
+      .mainField .minefield .minefield__cell .minefield__blastIcon,
+      .mainField .minefield .minefield__cell .minefield__flagIcon {
+        width: 45px; }
+    .mainField .minefield .minefield__cell_unopened {
+      background-color: #dc6a3f;
+      transition: 0.1s; }
+      .mainField .minefield .minefield__cell_unopened:hover {
+        background-color: #b4562e;
+        box-shadow: 3px 3px 4px 1px #b4562e; }
+    .mainField .minefield .minefield__cell_opened {
+      border: solid 2px #d6c488;
+      box-shadow: 3px 3px 4px 1px #d6c488; }
+    .mainField .minefield .minefield__cell_blast {
+      border: solid 2px #6e281f;
+      box-shadow: 3px 3px 4px 1px #6e281f;
+      background-color: #db1919; }
+    .mainField .minefield .minefield__cell_foundMine {
+      background-color: #22b914;
+      box-shadow: 3px 3px 4px 1px #0da100; }
+  .mainField .easyLayout {
+    grid-template-columns: repeat(10, calc((100vh - 420px) / 10));
+    grid-template-rows: repeat(10, calc((100vh - 420px) / 10)); }
+    @media (max-width: 768px) {
+      .mainField .easyLayout {
+        gap: 5px;
+        grid-template-columns: repeat(10, calc((100vh - 480px) / 10));
+        grid-template-rows: repeat(10, calc((100vh - 480px) / 10)); }
+        .mainField .easyLayout .minefield__cell .minefield__blastIcon,
+        .mainField .easyLayout .minefield__cell .minefield__flagIcon {
+          width: 30px; } }
+    @media (max-width: 533px) {
+      .mainField .easyLayout {
+        gap: 5px;
+        grid-template-columns: repeat(10, calc((100vh - 660px) / 10));
+        grid-template-rows: repeat(10, calc((100vh - 660px) / 10)); }
+        .mainField .easyLayout .minefield__cell {
+          border-radius: 3px; }
+          .mainField .easyLayout .minefield__cell .minefield__blastIcon,
+          .mainField .easyLayout .minefield__cell .minefield__flagIcon {
+            width: 20px; } }
+  .mainField .mediumLayout {
+    grid-template-columns: repeat(15, calc((100vh - 370px) / 15));
+    grid-template-rows: repeat(15, calc((100vh - 370px) / 15));
+    gap: 8px; }
+    .mainField .mediumLayout .minefield__cell {
+      border-radius: 3px; }
+      .mainField .mediumLayout .minefield__cell .minefield__blastIcon,
+      .mainField .mediumLayout .minefield__cell .minefield__flagIcon {
+        width: 30px; }
+    @media (max-width: 768px) {
+      .mainField .mediumLayout {
+        grid-template-columns: repeat(15, calc((100vh - 560px) / 15));
+        grid-template-rows: repeat(15, calc((100vh - 560px) / 15)); }
+        .mainField .mediumLayout .minefield__cell .minefield__blastIcon,
+        .mainField .mediumLayout .minefield__cell .minefield__flagIcon {
+          width: 20px; } }
+    @media (max-width: 533px) {
+      .mainField .mediumLayout {
+        grid-template-columns: repeat(15, calc((100vh - 620px) / 15));
+        grid-template-rows: repeat(15, calc((100vh - 620px) / 15)); }
+        .mainField .mediumLayout .minefield__cell .minefield__blastIcon,
+        .mainField .mediumLayout .minefield__cell .minefield__flagIcon {
+          width: 15px; } }
+  .mainField .hardLayout {
+    grid-template-columns: repeat(20, calc((100vh - 350px) / 20));
+    grid-template-rows: repeat(20, calc((100vh - 350px) / 20));
+    gap: 5px; }
+    .mainField .hardLayout .minefield__cell {
+      border-radius: 2px; }
+      .mainField .hardLayout .minefield__cell .minefield__blastIcon,
+      .mainField .hardLayout .minefield__cell .minefield__flagIcon {
+        width: 20px; }
+    @media (max-width: 768px) {
+      .mainField .hardLayout {
+        grid-template-columns: repeat(20, calc((100vh - 540px) / 20));
+        grid-template-rows: repeat(20, calc((100vh - 540px) / 20)); }
+        .mainField .hardLayout .minefield__cell {
+          font-size: 16px; }
+          .mainField .hardLayout .minefield__cell .minefield__blastIcon,
+          .mainField .hardLayout .minefield__cell .minefield__flagIcon {
+            width: 15px; } }
+    @media (max-width: 533px) {
+      .mainField .hardLayout {
+        grid-template-columns: repeat(20, calc((100vh - 620px) / 20));
+        grid-template-rows: repeat(20, calc((100vh - 620px) / 20)); }
+        .mainField .hardLayout .minefield__cell {
+          font-size: 14px; }
+          .mainField .hardLayout .minefield__cell .minefield__blastIcon,
+          .mainField .hardLayout .minefield__cell .minefield__flagIcon {
+            width: 12px; } }
+  @media (max-width: 768px) {
+    .mainField {
+      padding: 7px; } }

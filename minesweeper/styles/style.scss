@@ -1,0 +1,419 @@
+//colors
+$beigeColor: #e9dbb3;
+$darkBeigeColor: #d6c488;
+$rustyColor: #dc6a3f;
+$lightRustyColor: #e27749;
+$darkRustyColor: #b4562e;
+$blackColor: #1e1a18;
+$greyColor: #546b6e;
+$lightGreyColor: #879eb1;
+$darkYellowColor: #d1a04e;
+$lightYellowColor: #dfcda2;
+$darkRedColor: #6e281f;
+$redColor: rgb(219, 25, 25);
+$greenColor: #22b914;
+$darkGreenColor: #0da100;
+//mixins
+@mixin borderShadow {
+  padding: 5px;
+  border: solid $lightYellowColor 2px;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 7px 3px $lightYellowColor;
+}
+
+//btn
+@mixin btn {
+  @include borderShadow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  border-radius: 100px;
+  outline: none;
+  background: unset;
+  cursor: pointer;
+  transition: 0.1s;
+
+  &:hover {
+    box-shadow: inset 2px 2px 5px 2px #dc6a3f;
+    border-color: #dc6a3f;
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+@mixin settingsHeading {
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 18px;
+  background-color: $rustyColor;
+  color: $darkBeigeColor;
+}
+
+body {
+  padding: 15px;
+
+  @media (max-width: 768px) {
+    padding: 5px;
+  }
+}
+
+.settingsMenu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -420px;
+  width: 320px;
+  background-color: $beigeColor;
+  box-shadow: inset 2px 2px 7px 3px $lightYellowColor;
+  transition: 0.2s;
+
+  .closeBtn {
+    @include btn;
+    position: relative;
+    margin: 10px 0 0 10px;
+
+    .closeBtn__partition {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 70%;
+      height: 3px;
+      border-radius: 5px;
+      background-color: $greyColor;
+      &:first-child {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &:last-child {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+
+  .settingsMenu__settingsHeading {
+    @include settingsHeading;
+  }
+
+  .settingsMenu__levelSettings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    box-sizing: border-box;
+
+    .settingsMenu__lvlBtn {
+      @include btn;
+      width: 280px;
+      margin-top: 15px;
+      border-radius: 5px;
+    }
+    //css mod for settingsMenu__lvlBtn
+    .settingsMenu__lvlBtn_active {
+      box-shadow: inset 2px 2px 7px 3px $rustyColor;
+      border-color: $rustyColor;
+    }
+
+    .settingsMenu__minesQuantity {
+      display: flex;
+      padding: 0 10px;
+      margin-top: 15px;
+      box-sizing: border-box;
+      font-size: 18px;
+
+      .settingsMenu__minesQuantityInput {
+        width: 50px;
+        margin-left: 15px;
+        outline: unset;
+      }
+    }
+
+    .settingsMenu__saveSettingsBtn {
+      @include btn;
+      margin-top: 15px;
+      width: 180px;
+      border-radius: 5px;
+    }
+  }
+}
+
+//css mod for settingsMenu
+.settingsMenu_showMenu {
+  right: 0;
+}
+
+.mainField {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-color: $beigeColor;
+
+  .scoreboard {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    color: $greyColor;
+
+    .scoreboard__topSection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .scoreboard__lvlIndicator {
+        font-size: 24px;
+      }
+
+      .scoreboard__soundBtn {
+        @include btn;
+        margin-left: auto;
+        margin-right: 25px;
+
+        .scoreboard__soundIcon {
+          width: 30px;
+        }
+      }
+
+      .scoreboard__settingsBtn {
+        @include btn;
+
+        .scoreboard__settingsIcon {
+          width: 30px;
+        }
+      }
+    }
+
+    .scoreboard__bottomSection {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+
+      .scoreboard__time,
+      .scoreboard__allMines,
+      .scoreboard__clickCounter {
+        @include borderShadow;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: start;
+        align-items: center;
+        max-width: 130px;
+        font-size: 20px;
+
+        .scoreboard__timeIcon,
+        .scoreboard__allMinesIcon,
+        .scoreboard__clicksCounterIcon {
+          width: 30px;
+          margin-right: 15px;
+        }
+      }
+      .scoreboard__newGameBtn {
+        @include btn;
+        width: 120px;
+        border-radius: 5px;
+        color: $greyColor;
+      }
+    }
+
+    .messageSection {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row-reverse;
+      height: 45px;
+      margin: 10px 0;
+      padding: 5px;
+      border: solid $darkBeigeColor 2px;
+      border-radius: 15px;
+      box-sizing: border-box;
+      background-color: $beigeColor;
+      opacity: 0;
+      transition: 0.1s;
+      .messageSection__messageText {
+        margin: 0;
+        font-size: 17px;
+
+        @media (max-width: 533px) {
+          font-size: 16px;
+        }
+      }
+      .messageSection__messageIcon {
+        width: 30px;
+        margin-right: 15px;
+      }
+    }
+    //css mod for messageSection
+    .messageSection_showSection {
+      opacity: 1;
+    }
+  }
+
+  .minefield {
+    display: grid;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: calc(100vh - 100px - 150px);
+    box-sizing: border-box;
+
+    .minefield__cell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      box-shadow: 3px 3px 4px 1px $lightRustyColor;
+      box-sizing: border-box;
+      font-size: 22px;
+      .minefield__blastIcon,
+      .minefield__flagIcon {
+        width: 45px;
+      }
+    }
+    //css mods for .minefield__cell
+    .minefield__cell_unopened {
+      background-color: $rustyColor;
+      transition: 0.1s;
+      &:hover {
+        background-color: $darkRustyColor;
+        box-shadow: 3px 3px 4px 1px $darkRustyColor;
+      }
+    }
+
+    .minefield__cell_opened {
+      border: solid 2px $darkBeigeColor;
+      box-shadow: 3px 3px 4px 1px $darkBeigeColor;
+    }
+
+    .minefield__cell_blast {
+      border: solid 2px $darkRedColor;
+      box-shadow: 3px 3px 4px 1px $darkRedColor;
+      background-color: $redColor;
+    }
+    .minefield__cell_foundMine {
+      background-color: $greenColor;
+      box-shadow: 3px 3px 4px 1px $darkGreenColor;
+    }
+  }
+
+  //css mod for minefield
+  .easyLayout {
+    grid-template-columns: repeat(10, calc((100vh - 420px) / 10));
+    grid-template-rows: repeat(10, calc((100vh - 420px) / 10));
+
+    @media (max-width: 768px) {
+      gap: 5px;
+      grid-template-columns: repeat(10, calc((100vh - 480px) / 10));
+      grid-template-rows: repeat(10, calc((100vh - 480px) / 10));
+
+      .minefield__cell {
+        .minefield__blastIcon,
+        .minefield__flagIcon {
+          width: 30px;
+        }
+      }
+    }
+
+    @media (max-width: 533px) {
+      gap: 5px;
+      grid-template-columns: repeat(10, calc((100vh - 660px) / 10));
+      grid-template-rows: repeat(10, calc((100vh - 660px) / 10));
+
+      .minefield__cell {
+        border-radius: 3px;
+        .minefield__blastIcon,
+        .minefield__flagIcon {
+          width: 20px;
+        }
+      }
+    }
+  }
+
+  .mediumLayout {
+    grid-template-columns: repeat(15, calc((100vh - 370px) / 15));
+    grid-template-rows: repeat(15, calc((100vh - 370px) / 15));
+    gap: 8px;
+
+    .minefield__cell {
+      border-radius: 3px;
+      .minefield__blastIcon,
+      .minefield__flagIcon {
+        width: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(15, calc((100vh - 560px) / 15));
+      grid-template-rows: repeat(15, calc((100vh - 560px) / 15));
+
+      .minefield__cell {
+        .minefield__blastIcon,
+        .minefield__flagIcon {
+          width: 20px;
+        }
+      }
+    }
+
+    @media (max-width: 533px) {
+      grid-template-columns: repeat(15, calc((100vh - 620px) / 15));
+      grid-template-rows: repeat(15, calc((100vh - 620px) / 15));
+
+      .minefield__cell {
+        .minefield__blastIcon,
+        .minefield__flagIcon {
+          width: 15px;
+        }
+      }
+    }
+  }
+
+  .hardLayout {
+    grid-template-columns: repeat(20, calc((100vh - 350px) / 20));
+    grid-template-rows: repeat(20, calc((100vh - 350px) / 20));
+    gap: 5px;
+
+    .minefield__cell {
+      border-radius: 2px;
+      .minefield__blastIcon,
+      .minefield__flagIcon {
+        width: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(20, calc((100vh - 540px) / 20));
+      grid-template-rows: repeat(20, calc((100vh - 540px) / 20));
+
+      .minefield__cell {
+        font-size: 16px;
+        .minefield__blastIcon,
+        .minefield__flagIcon {
+          width: 15px;
+        }
+      }
+    }
+
+    @media (max-width: 533px) {
+      grid-template-columns: repeat(20, calc((100vh - 620px) / 20));
+      grid-template-rows: repeat(20, calc((100vh - 620px) / 20));
+
+      .minefield__cell {
+        font-size: 14px;
+        .minefield__blastIcon,
+        .minefield__flagIcon {
+          width: 12px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 7px;
+  }
+}
